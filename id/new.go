@@ -13,10 +13,13 @@ package id
 
 import (
 	"github.com/jaevor/go-nanoid"
+	"github.com/samber/lo"
 )
 
 var (
-	stdGenerator = nanoid.CustomASCII("0123456789abcdefghijkmnopqrstuvwxyz", 14)
+	stdGenerator = lo.Must1(
+		nanoid.CustomASCII("0123456789abcdefghijkmnopqrstuvwxyz", 14),
+	)
 )
 
 // New returns a new standard 14-character NanoID.
